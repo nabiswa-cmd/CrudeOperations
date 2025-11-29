@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDING DATA</title>
+</head>
+<body>
+    
+    <form method="POST">
+        <Fieldset >
+            {%csrf_token%}
+            <input type="text" name="name" placeholder="Your Name" required> <br><br>
+            <input type="number" name="age" placeholder="Your Age" required> <br><br>
+            <input type="text" name="grade" placeholder="Your Grade" required><br><br>
+            <input type="submit">
+            
+        </Fieldset>
+    </form>
+    <button> 
+        <a href="{url 'listviews'}">Show Table</a>
+    </button>
+</body>
+</html>

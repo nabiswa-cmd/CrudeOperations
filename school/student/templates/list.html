@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+    {%block content%}
+    <h1 class="display-4 ms-2"> This is my List of student</h1>
+
+    <table border="1" class="table">
+        <thead>
+            <th>student Name</th>
+            <th>Age</th>
+            <th>Grade</th>
+            <th>Action</th>
+        </thead>
+        {% for s in Student%}
+        <tr>
+            <td>{{s.name}}</td>
+            <td>{{s.age}}</td>
+            <td>{{s.grade}}</td>
+            <td>
+                <a class="btn btn-primary" href="{url 'edit' s.id}">edit</a>
+                <a class="btn btn-primary" href="{url 'delete' s.id}">delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {%endblock%}
+</body>
+</html>
