@@ -1,7 +1,9 @@
 from django.urls import path
 from . import views
-
+from .form import studentForm
 urlpatterns = [
-    path ('',views.list, name= "listviews"),
-    path('add/',views.add, name = "add")
+    path('',views.home, name = 'home'),
+    path('student/',views.student, name = 'student'),
+    
+    path('addStudent',views.addStudent,name='addStudent')
 ]
